@@ -44,23 +44,17 @@ public class MainActivity extends Activity {
         Button btn1 = new Button(this);
         btn1.setText("한글로 변환");
         btn1.setLayoutParams(new LinearLayout.LayoutParams(-1, -2, 1));
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String input = txt2.getText().toString();
-                web.loadUrl("javascript:doProcess('" + toHangul(input) + "', false);");
-            }
+        btn1.setOnClickListener(v -> {
+            String input = txt2.getText().toString();
+            web.loadUrl("javascript:doProcess('" + toHangul(input) + "', false);");
         });
         lay2.addView(btn1);
         Button btn2 = new Button(this);
         btn2.setText("알파벳으로 변환");
         btn2.setLayoutParams(new LinearLayout.LayoutParams(-1, -2, 1));
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String input = txt2.getText().toString();
-                web.loadUrl("javascript:doProcess('" + input + "', true);");
-            }
+        btn2.setOnClickListener(v -> {
+            String input = txt2.getText().toString();
+            web.loadUrl("javascript:doProcess('" + input + "', true);");
         });
         lay2.addView(btn2);
         layout.addView(lay2);
