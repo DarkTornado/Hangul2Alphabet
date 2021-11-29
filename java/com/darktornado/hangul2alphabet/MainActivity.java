@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -15,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+
+    private EditText output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,7 @@ public class MainActivity extends Activity {
         txt4.setHint("결과물...");
         layout.addView(txt4);
 
+        output = txt4;
         layout.addView(web);
 
         int pad = dip2px(16);
@@ -95,7 +97,8 @@ public class MainActivity extends Activity {
 
     public void onResultReceived(String data, boolean flag) {
         if (flag) data = toAlphabet(data);
-        Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
+        output.setText(data);
+        Toast.makeText(this, "변환 완료", Toast.LENGTH_SHORT).show();
     }
 
     private int dip2px(int dips) {
