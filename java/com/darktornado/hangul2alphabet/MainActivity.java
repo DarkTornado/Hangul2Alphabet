@@ -68,7 +68,6 @@ public class MainActivity extends Activity {
         layout.addView(txt4);
 
         output = txt4;
-        layout.addView(web);
 
         int pad = dip2px(16);
         layout.setPadding(pad, pad, pad, pad);
