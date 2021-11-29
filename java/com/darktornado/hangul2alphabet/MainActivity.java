@@ -99,9 +99,9 @@ public class MainActivity extends Activity {
         return str;
     }
 
-    public void onResultReceived(String input, String output, boolean flag) {
-        if (flag) output = toAlphabet(output);
-        Toast.makeText(this, input + "\n" + output, Toast.LENGTH_SHORT).show();
+    public void onResultReceived(String data, boolean flag) {
+        if (flag) data = toAlphabet(data);
+        Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
     }
 
     private int dip2px(int dips) {
@@ -110,8 +110,8 @@ public class MainActivity extends Activity {
 
     private class JSLinker {
         @JavascriptInterface
-        public void sendData(final String input, final String output, boolean flag) {
-            new Handler().post(() -> onResultReceived(input, output, flag));
+        public void sendData(final String data, boolean flag) {
+            new Handler().post(() -> onResultReceived(data, flag));
         }
     }
 

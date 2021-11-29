@@ -17,10 +17,10 @@
     function doProcess(value, flag) {
         if (flag) {
             var result = Hangul.disassemble(value);
-            window.android.sendData(value, result.join(""), flag);
+            window.android.sendData(result.join(""), flag);
         } else {
             var result = Hangul.assemble(value.split(""));
-            window.android.sendData(value, result, flag);
+            window.android.sendData(result, flag);
         }
     }
 </script>
