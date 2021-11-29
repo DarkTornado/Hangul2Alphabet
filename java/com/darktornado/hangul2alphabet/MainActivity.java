@@ -1,6 +1,7 @@
 package com.darktornado.hangul2alphabet;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class MainActivity extends Activity {
         TextView txt1 = new TextView(this);
         txt1.setText("입력 : ");
         txt1.setTextSize(17);
+        txt1.setTextColor(Color.BLACK);
         layout.addView(txt1);
         EditText txt2 = new EditText(this);
         txt2.setHint("내용 입력...");
@@ -52,6 +54,7 @@ public class MainActivity extends Activity {
         TextView txt3 = new TextView(this);
         txt3.setText("\n출력 : ");
         txt3.setTextSize(17);
+        txt3.setTextColor(Color.BLACK);
         layout.addView(txt3);
         EditText txt4 = new EditText(this);
         txt4.setHint("결과물...");
