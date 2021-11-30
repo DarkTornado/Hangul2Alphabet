@@ -1,6 +1,8 @@
 package com.darktornado.hangul2alphabet;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -67,6 +69,16 @@ public class MainActivity extends Activity {
         layout.addView(txt3);
         txt4.setHint("결과물...");
         layout.addView(txt4);
+
+        Button copy = new Button(this);
+        copy.setText("클립보드로 복사");
+        copy.setLayoutParams(new LinearLayout.LayoutParams(-1, -2, 1));
+        copy.setOnClickListener(v -> {
+            ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            cm.setPrimaryClip(ClipData.newPlainText("label", output.getText().toString()));
+            Toast.makeText(this, "복사 완료", Toast.LENGTH_SHORT).show();
+        });
+        layout.addView(copy);
 
         output = txt4;
         TextView maker = new TextView(this);
