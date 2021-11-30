@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -68,6 +69,12 @@ public class MainActivity extends Activity {
         layout.addView(txt4);
 
         output = txt4;
+        TextView maker = new TextView(this);
+        maker.setText("\n© 2021 Dark Tornado, All rights reserved.\n");
+        maker.setTextSize(13);
+        maker.setTextColor(Color.BLACK);
+        maker.setGravity(Gravity.CENTER);
+        layout.addView(maker);
 
         int pad = dip2px(16);
         layout.setPadding(pad, pad, pad, pad);
