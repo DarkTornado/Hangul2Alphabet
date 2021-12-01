@@ -3,10 +3,14 @@ package com.darktornado.hangul2alphabet;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -19,6 +23,29 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
     private EditText output;
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+                Uri uri = Uri.parse("https://github.com/DarkTornado/Hangul2Alphabet");
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                break;
+            case 1:
+                startActivity(new Intent(this, LicenseActivity.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0, 0, 0, "깃허브로 이동");
+        menu.add(0, 1, 0, "오픈 소스 라이선스");
+        return true;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
