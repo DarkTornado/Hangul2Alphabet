@@ -9,7 +9,7 @@
 * 입력 : `sjeh qkqhek`, 출력 : `너도 바보다`
 
 ## 사용 라이브러리
-* [Hangul.js](https://github.com/e-/Hangul.js/)
+* [Hangul.js](https://github.com/e-/Hangul.js/) - MIT License
 
 ## 기타
 * 한글 분해 & 조합 기능이 있는 자바스크립트 모듈을 웹뷰 안에서 돌립니다.
