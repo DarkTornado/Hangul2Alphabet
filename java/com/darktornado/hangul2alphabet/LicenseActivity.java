@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import com.darktornado.library.LicenseView;
+
 public class LicenseActivity extends Activity {
 
     @Override
@@ -12,6 +14,15 @@ public class LicenseActivity extends Activity {
         super.onCreate(savedInstanceState);
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(1);
+
+        layout.addView(new LicenseView(this)
+                .setTitle("Hangul.js")
+                .setSubtitle("by Jaemin Jo, MIT License")
+                .setLicense("MIT License", "Hangul.js.txt"));
+        layout.addView(new LicenseView(this)
+                .setTitle("LicenseView")
+                .setSubtitle("by DarkTornado, BSD 3-Clause License")
+                .setLicense("BSD 3-Clause License", "LicenseView.txt"));
 
         int pad = dip2px(16);
         layout.setPadding(pad, pad, pad, pad);
